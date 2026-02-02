@@ -10,3 +10,5 @@ updates:
   - dependency-name: simplecov
     versions:
     - 0.18.5
+  cooldown:
+    default-days: 7
