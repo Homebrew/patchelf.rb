@@ -94,3 +94,15 @@ SHELL_EXEC(rm ls.patch)
 ## Environment
 
 patchelf.rb is implemented in pure Ruby, so it should work in all environments include Linux, macOS, and Windows!
+
+## Project Authors
+
+The git history remains the definitive record of all contributions.
+
+### Original Author and Project Founder
+
+* david942j (@david942j)
+
+### Maintainers
+
+* david942j (@david942j)
