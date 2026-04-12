@@ -58,7 +58,7 @@ module PatchELF
       @out_file = out_file
       @set = set
 
-      f = File.open(in_file, 'rb')
+      f = File.open(in_file, 'rb') # rubocop:disable Style/FileOpen
       # the +@buffer+ and +@elf+ both could work on same +StringIO+ stream,
       # the updating of @buffer in place blocks us from looking up old values.
       # TODO: cache the values needed later, use same stream for +@buffer+ and +@elf+.
