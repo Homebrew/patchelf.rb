@@ -24,7 +24,7 @@ jobs:
       with:
         persist-credentials: false
     - name: Set up Ruby
-      uses: ruby/setup-ruby@8d27f39a5e7ad39aebbcbd1324f7af020229645c # v1.287.0
+      uses: ruby/setup-ruby@4c56a21280b36d862b5fc31348f463d60bdc55d5 # v1.301.0
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
