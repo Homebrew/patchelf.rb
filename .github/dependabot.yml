@@ -1,14 +1,21 @@
+# This file is synced from the `.github` repository, do not modify it directly.
+---
 version: 2
 updates:
-- package-ecosystem: bundler
-  directory: "/"
+- package-ecosystem: github-actions
+  directories:
+  - "/"
   schedule:
-    interval: daily
-    time: "21:00"
-  open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: simplecov
-    versions:
-    - 0.18.5
+    interval: weekly
+    day: friday
+    time: '08:00'
+    timezone: Etc/UTC
+  groups:
+    github-actions:
+      patterns:
+      - "*"
+  allow:
+  - dependency-type: all
   cooldown:
     default-days: 7
+
