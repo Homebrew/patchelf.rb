@@ -8,8 +8,9 @@ require 'patchelf/version'
 Gem::Specification.new do |s|
   s.name          = 'patchelf'
   s.version       = PatchELF::VERSION
-  s.summary       = 'Inspect and modify ELF binaries in pure Ruby'
-  s.description   = 'A Ruby library and command-line tool for inspecting and modifying ELF executables and libraries.'
+  s.summary       = 'Inspect, modify and create ELF binaries in pure Ruby'
+  s.description   = 'A Ruby library and command-line tool for inspecting, modifying ' \
+                    'and creating ELF executables and libraries.'
   s.license       = 'MIT'
   s.authors       = ['david942j']
   s.email         = ['david942j@gmail.com']
