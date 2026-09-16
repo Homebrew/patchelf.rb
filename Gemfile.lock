@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     patchelf (1.7.0)
-      elftools (>= 1.3)
+      elftools (>= 2.2)
       logger (~> 1)
 
 GEM
@@ -11,7 +11,7 @@ GEM
     ast (2.4.3)
     bindata (3.0.0)
     diff-lcs (1.6.2)
-    elftools (2.1.0)
+    elftools (2.2.0)
       bindata (>= 2, < 4)
     json (2.21.2)
     language_server-protocol (3.17.0.6)
@@ -82,7 +82,7 @@ CHECKSUMS
   ast (2.4.3) sha256=954615157c1d6a382bc27d690d973195e79db7f55e9765ac7c481c60bdb4d383
   bindata (3.0.0) sha256=7edc84092f958326ea1a3207142c79ba9f6b53796a02098a5b1670be75bd8a79
   diff-lcs (1.6.2) sha256=9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962
-  elftools (2.1.0) sha256=c111937389d9f8e20126ace035510dfa4f3a44fbce33e8a0b27546c66a5b0af4
+  elftools (2.2.0) sha256=86e17d54bf3b89a234e9265946f591ee35bc2ca5b6357ab23ee7158d8c1c32d9
   json (2.21.2) sha256=1f1d3b7cf2b3ba1a69beca0bb6db13d5438b80bff3cd54cdaaa620b9b07c1c6a
   language_server-protocol (3.17.0.6) sha256=5ef2c0c138f8267e1bc631d3328347d354f96724b0af22f2c79516120443b7f0
   lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
