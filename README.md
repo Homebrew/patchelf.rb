@@ -111,6 +111,25 @@ A patcher keeps its input file open for the lifetime of the object. Avoid
 retaining patcher instances in long-running processes after their work is
 complete.
 
+`PatchELF::Builder` creates an ELF file from scratch or from an existing file:
+
+```ruby
+entry = 0x1000
+code = [
+  "\xb0\x3c", # mov al, 60
+  "\x0f\x05"  # syscall
+].join
+elf = PatchELF::Builder.new(machine: :x86_64, type: :dyn, entry: entry)
+elf.add_section('.dynstr', data: "\x00", type: :strtab, flags: [:alloc])
+elf.add_section('.text', data: code, flags: %i[alloc execinstr], addr: entry, offset: entry, align: 64)
+pie = [ELFTools::Constants::DT_FLAGS_1, ELFTools::Constants::DF_1_PIE, ELFTools::Constants::DT_NULL, 0].pack('Q<4')
+elf.add_section('.dynamic', type: :dynamic, data: pie, flags: [:alloc], align: 8, link: '.dynstr')
+abi = [0x00000004, 0x00000010, 0x00000001].pack('L<3') + "GNU\x00" + [0, 4, 4, 0].pack('L<4') # NT_GNU_ABI_TAG Linux 4.4.0
+elf.add_section('.note.ABI-tag', type: :note, data: abi, flags: [:alloc], align: 4)
+elf.add_section('.bss', type: :nobits, size: 64, addr: 0x2000, flags: %i[alloc write])
+elf.save('example')
+```
+
 Fixture coverage is primarily x86-64, with a 32-bit x86 regression fixture and
 unit coverage for architecture-specific page sizes. Validate rewritten binaries
 on every target architecture before distributing them.

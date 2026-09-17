@@ -6,5 +6,7 @@
 module PatchELF
 end
 
+require 'patchelf/builder'
 require 'patchelf/patcher'
+require 'patchelf/string_table'
 require 'patchelf/version'
